@@ -22,14 +22,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.15" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Assets\electron.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\electron_32x32.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Content Update="ElectronHostHook\**\*.*">
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </Content>

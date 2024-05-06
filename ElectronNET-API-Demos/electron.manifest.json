@@ -13,7 +13,7 @@
     "buildVersion": "23.6.1",
     "compression": "maximum",
     "win": {
-      "icon": "Assets/electron.ico",
+      "icon": "bin/wwwroot/assets/app-icon/win/app.ico",
       "publish": [
         {
           "provider": "github",
