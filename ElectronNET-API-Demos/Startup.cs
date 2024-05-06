@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace ElectronNET.WebApp
 {
@@ -51,8 +54,14 @@ namespace ElectronNET.WebApp
         {
             //AddDevelopmentTests();
 
+            var iconFile =
+                RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "win/app.ico" :
+                RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "mac/app.icns" :
+                "png/128.png";
+
             var browserWindow = await Electron.WindowManager.CreateWindowAsync(new BrowserWindowOptions
             {
+                Icon = Path.Join(AppContext.BaseDirectory, $"wwwroot/assets/app-icon/{iconFile}"),
                 Width = 1152,
                 Height = 940,
                 Show = false
